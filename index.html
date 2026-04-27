@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRCP | Transport & Road Condition Platform</title>
+  <meta name="description" content="Smart Transport Information for South Sudan: road conditions, transport availability, alerts, and route planning." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">TRCP</div>
+        <div>
+          <p class="brand-title">Transport & Road Condition Platform</p>
+          <p class="brand-subtitle">South Sudan infrastructure awareness</p>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">☰</button>
+      <nav class="nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#road-conditions">Road Conditions</a>
+        <a href="#transport-info">Transport Info</a>
+        <a href="#route-planning">Routes</a>
+        <a href="#map">Map</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#report">Report Road</a>
+        <a href="#dashboard">Dashboard</a>
+      </nav>
+      <div class="top-actions">
+        <button class="btn btn-ghost" id="themeToggle">Dark</button>
+        <button class="btn btn-primary" id="authOpen">Login / Register</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">South Sudan Transport Intelligence</p>
+          <h1>Smart Transport Information for South Sudan</h1>
+          <p>Check road conditions, find transport, and travel safely across South Sudan with real-time updates and route planning.</p>
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="#road-conditions">Check Road Condition</a>
+            <a class="btn btn-primary" href="#report">Report Road Issue</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="search-card">
+            <p class="card-label">Quick Road Check</p>
+            <div class="search-group">
+              <input type="text" placeholder="Enter location or route" aria-label="Search road condition" />
+              <button class="btn btn-primary">Search</button>
+            </div>
+            <p class="mini-note">Low-bandwidth friendly search with essential updates.</p>
+          </div>
+          <div class="status-badges">
+            <span class="badge badge-good">Good</span>
+            <span class="badge badge-warning">Flooded</span>
+            <span class="badge badge-danger">Closed</span>
+            <span class="badge badge-info">Under Construction</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section homepage-cards">
+        <article class="card card-large">
+          <div class="card-header">
+            <h2>Latest Road Updates</h2>
+            <a href="#road-conditions">View all</a>
+          </div>
+          <ul class="update-list">
+            <li><span>Juba → Bor</span><strong>Flooded</strong></li>
+            <li><span>Juba → Nimule</span><strong>Good</strong></li>
+            <li><span>Juba → Yei</span><strong>Poor</strong></li>
+            <li><span>Malakal → Wau</span><strong>Closed</strong></li>
+          </ul>
+        </article>
+
+        <article class="card map-card">
+          <div class="card-header">
+            <h2>Map Preview</h2>
+            <a href="#map">Explore map</a>
+          </div>
+          <div class="map-placeholder">
+            <div class="map-dot good" title="Good route"></div>
+            <div class="map-dot warning" title="Flooded route"></div>
+            <div class="map-dot danger" title="Closed route"></div>
+            <p>Interactive road condition map coming soon.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section featured-routes">
+        <div class="section-header">
+          <h2>Featured Routes</h2>
+          <p>Reliable routes and transport estimates for travelers and traders.</p>
+        </div>
+        <div class="route-grid">
+          <article class="route-card">
+            <h3>Juba → Nimule</h3>
+            <p>Bus • 20,000 SSP • 3h</p>
+          </article>
+          <article class="route-card">
+            <h3>Juba → Yei</h3>
+            <p>Truck • 18,000 SSP • 4h</p>
+          </article>
+          <article class="route-card">
+            <h3>Juba → Bor</h3>
+            <p>Shared Taxi • 12,000 SSP • 5h</p>
+          </article>
+          <article class="route-card">
+            <h3>Wau → Malakal</h3>
+            <p>Coach • 25,000 SSP • 6h</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alerts-preview" id="alerts">
+        <div class="section-header">
+          <h2>Transport Alerts</h2>
+          <p>Stay informed about closures, weather, and security issues.</p>
+        </div>
+        <div class="alert-cards">
+          <article class="alert-card alert-warning">
+            <h3>Road Closure</h3>
+            <p>Juba to Bor closed due to flooding near the river crossing.</p>
+          </article>
+          <article class="alert-card alert-info">
+            <h3>Weather Alert</h3>
+            <p>Heavy rains expected around Nimule, expect delays and detours.</p>
+          </article>
+          <article class="alert-card alert-danger">
+            <h3>Security Notice</h3>
+            <p>Check with local authorities before traveling on the eastern corridor.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="road-conditions">
+        <div class="section-header">
+          <h2>Road Condition Dashboard</h2>
+          <p>Filter by status, search by location, and track road conditions at a glance.</p>
+        </div>
+        <div class="filter-row">
+          <button class="btn btn-outline">Good</button>
+          <button class="btn btn-outline">Bad</button>
+          <button class="btn btn-outline">Flooded</button>
+          <button class="btn btn-outline">Closed</button>
+          <input type="search" placeholder="Search location" aria-label="Search location" />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Route</th><th>Status</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Juba → Nimule</td><td class="status good">Good</td><td>Clear roads, smooth travel</td></tr>
+              <tr><td>Juba → Bor</td><td class="status flooded">Flooded</td><td>Heavy rains, avoid if possible</td></tr>
+              <tr><td>Juba → Yei</td><td class="status warning">Poor</td><td>Some potholes and waterlogged sections</td></tr>
+              <tr><td>Malakal → Wau</td><td class="status closed">Closed</td><td>Bridge repair in progress</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="report">
+        <div class="section-header">
+          <h2>Report Road Condition</h2>
+          <p>Your report helps keep the community safe and the network updated.</p>
+        </div>
+        <form class="report-form">
+          <div class="form-row">
+            <label><span>Location</span><input type="text" placeholder="City or region" required /></label>
+            <label><span>Road Name</span><input type="text" placeholder="Route or road name" required /></label>
+          </div>
+          <div class="form-row">
+            <label><span>Status</span>
+              <select required>
+                <option>Good</option>
+                <option>Bad</option>
+                <option>Flooded</option>
+                <option>Closed</option>
+                <option>Under Construction</option>
+              </select>
+            </label>
+            <label><span>Upload Image</span><input type="file" accept="image/*" /></label>
+          </div>
+          <label class="full-width"><span>Description</span><textarea rows="4" placeholder="Add details about the road condition"></textarea></label>
+          <button class="btn btn-primary" type="submit">Submit Report</button>
+        </form>
+      </section>
+
+      <section class="section" id="transport-info">
+        <div class="section-header">
+          <h2>Transport Information</h2>
+          <p>Available transport, prices, and estimated travel time for key routes.</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Juba → Nimule</h3>
+            <p>Bus • 20,000 SSP</p>
+            <p>3 hours</p>
+          </article>
+          <article class="info-card">
+            <h3>Juba → Yei</h3>
+            <p>Truck • 18,000 SSP</p>
+            <p>4 hours</p>
+          </article>
+          <article class="info-card">
+            <h3>Malakal → Wau</h3>
+            <p>Coach • 25,000 SSP</p>
+            <p>6 hours</p>
+          </article>
+          <article class="info-card">
+            <h3>Rumbek → Bentiu</h3>
+            <p>Shared taxi • 15,000 SSP</p>
+            <p>5.5 hours</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="route-planning">
+        <div class="section-header">
+          <h2>Route Planning</h2>
+          <p>Select start and destination to view suggested routes, distance, and travel time.</p>
+        </div>
+        <div class="planning-panel">
+          <form class="route-form">
+            <label><span>From</span><input type="text" placeholder="Start location" /></label>
+            <label><span>To</span><input type="text" placeholder="Destination" /></label>
+            <button class="btn btn-secondary" type="button">Find Route</button>
+          </form>
+          <div class="route-summary">
+            <h3>Suggested Routes</h3>
+            <ul>
+              <li>Juba → Nimule: 280 km • 3h</li>
+              <li>Juba → Yei: 170 km • 4h</li>
+              <li>Juba → Bor: 190 km • 5h</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="map">
+        <div class="section-header">
+          <h2>Interactive Map</h2>
+          <p>Visualize route status, field reports, and transport corridors across South Sudan.</p>
+        </div>
+        <div class="map-interactive-grid">
+          <aside class="road-list" aria-label="Main roads selector">
+            <h3>Main Roads</h3>
+            <p>Select a corridor to view current condition and highlights.</p>
+            <button class="route-select active" data-route="juba-nimule">Juba → Nimule</button>
+            <button class="route-select" data-route="juba-bor">Juba → Bor</button>
+            <button class="route-select" data-route="juba-yei">Juba → Yei</button>
+            <button class="route-select" data-route="wau-malakal">Wau → Malakal</button>
+            <button class="route-select" data-route="rumbek-bentiu">Rumbek → Bentiu</button>
+          </aside>
+          <div class="map-large">
+            <div class="map-placeholder large" id="roadMap">
+              <div class="map-summary">
+                <h3 id="routeTitle">Juba → Nimule</h3>
+                <p id="routeStatus">Status: Good</p>
+                <p id="routeNote">Smooth travel, clear roads through the main corridor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="section-header">
+          <h2>User & Admin Dashboard</h2>
+          <p>Manage profile, reports, saved routes, and approve road condition updates.</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dash-card">
+            <h3>User Profile</h3>
+            <p>Name: Amina</p>
+            <p>Reports: 7</p>
+          </article>
+          <article class="dash-card">
+            <h3>My Reports</h3>
+            <p>Pending: 2</p>
+            <p>Approved: 12</p>
+          </article>
+          <article class="dash-card">
+            <h3>Saved Routes</h3>
+            <p>Juba → Nimule</p>
+            <p>Juba → Yei</p>
+          </article>
+          <article class="dash-card">
+            <h3>Admin Activity</h3>
+            <p>Users managed: 48</p>
+            <p>Reports reviewed: 34</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="authModal" aria-hidden="true">
+      <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <div class="modal-header">
+          <div class="auth-tabs" role="tablist">
+            <button type="button" class="tab active auth-tab" data-tab="login" role="tab" aria-selected="true">Login</button>
+            <button type="button" class="tab auth-tab" data-tab="register" role="tab" aria-selected="false">Register</button>
+          </div>
+          <button type="button" class="close-modal" id="authClose" aria-label="Close authentication modal">×</button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" class="auth-form active">
+            <h2 id="authTitle">Login to TRCP</h2>
+            <label><span>Email</span><input type="email" placeholder="you@example.com" required /></label>
+            <label><span>Password</span><input type="password" placeholder="Enter password" required /></label>
+            <button class="btn btn-primary" type="submit">Login</button>
+          </form>
+          <form id="registerForm" class="auth-form">
+            <h2>Register for TRCP</h2>
+            <label><span>Full Name</span><input type="text" placeholder="Your full name" required /></label>
+            <label><span>Email</span><input type="email" placeholder="you@example.com" required /></label>
+            <label><span>Password</span><input type="password" placeholder="Create password" required /></label>
+            <label><span>Confirm Password</span><input type="password" placeholder="Repeat password" required /></label>
+            <button class="btn btn-primary" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h3>About TRCP</h3>
+          <p>Improving transportation and infrastructure awareness across South Sudan.</p>
+        </div>
+        <div>
+          <h3>Our Goal</h3>
+          <p>Supporting Industry, Innovation and Infrastructure with timely transport intelligence.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>email@trcp.ss</p>
+          <p>+211 912 000 000</p>
+        </div>
+      </div>
+      <p class="footer-text">Improving transportation and infrastructure awareness in South Sudan.</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
